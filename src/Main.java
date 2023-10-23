@@ -38,6 +38,7 @@ public class Main {
         System.out.println("To add a book - enter 1, to remove a book - enter 2, to find a book - enter 3, to list all books - enter 4");
         int toDo = scanner.nextInt();
 
+        scanner.nextLine();
         theBook.setToDo(toDo);
 
         switch (toDo){
