@@ -12,6 +12,7 @@ public class libraryCata{
 
     }
 
+
     public String getAddBook() {
         return addBook;
     }
@@ -27,6 +28,7 @@ public class libraryCata{
     public void setRemoveBook(String removeBook) {
         this.removeBook = removeBook;
     }
+
 
     public int getFindBook() {
         return findBook;

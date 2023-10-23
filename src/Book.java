@@ -13,6 +13,9 @@ public class Book {
 
     }
 
+    public Book(String title, String author, String ISBN, String genre) {
+    }
+
     public String getTitle() {
         return title;
     }

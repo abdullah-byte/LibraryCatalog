@@ -43,44 +43,44 @@ public class Main {
         switch (toDo){
             case 1:
 
-                    System.out.println("Please enter the Title of the book \n");
-                    String addBook = scanner.nextLine();
+                System.out.println("Please enter the Title of the book \n");
+                String addBook = scanner.nextLine();
 
-                    libraryAccess.setAddBook(addBook);
-                    libraryBooks.add(addBook);
+                libraryAccess.setAddBook(addBook);
+                libraryBooks.add(addBook);
 
-                    System.out.println(libraryBooks);
-                    break;
+                System.out.println(libraryBooks);
+                break;
 
             case 2:
 
-                    System.out.println("Please enter title of book to remove \n");
-                    String removeBook = scanner.nextLine();
-                    libraryAccess.setRemoveBook(removeBook);
-                    libraryBooks.remove(removeBook);
+                System.out.println("Please enter title of book to remove \n");
+                String removeBook = scanner.nextLine();
+                libraryAccess.setRemoveBook(removeBook);
+                libraryBooks.remove(removeBook);
 
-                    System.out.println(libraryBooks);
-                    break;
+                System.out.println(libraryBooks);
+                break;
 
             case 3:
 
-                    System.out.println("Please enter the index of the book to search \n");
-                    int findBook = scanner.nextInt();
-                    libraryAccess.setFindBook(findBook);
+                System.out.println("Please enter the index of the book to search \n");
+                int findBook = scanner.nextInt();
+                libraryAccess.setFindBook(findBook);
 
-                    System.out.println(libraryBooks.get(findBook));
-                    break;
+                System.out.println(libraryBooks.get(findBook));
+                break;
 
 
             case 4:
 
-                    System.out.println(libraryBooks);
-                    break;
+                System.out.println(libraryBooks);
+                break;
 
             case 5:
 
-                    System.out.println("Invalid input");
-                    break;
+                System.out.println("Invalid input");
+                break;
 
 
         }
