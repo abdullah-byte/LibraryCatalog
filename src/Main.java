@@ -4,88 +4,77 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Book theBook = new Book();
-
-
         Scanner scanner = new Scanner(System.in);
+        LibraryCatalog libraryCatalog = new LibraryCatalog();
 
+        while (true){
+            System.out.println("Library Catalog Management System");
+            System.out.println("1. Add Book");
+            System.out.println("2. Remove Book");
+            System.out.println("3. Find Book");
+            System.out.println("4. List Books");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
 
-        System.out.println("Please enter the author of the book \n");
-        String author = scanner.nextLine();
-        theBook.setAuthor(author);
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
 
-        System.out.println("Please enter the ISBN of the book \n");
-        String ISBN = scanner.nextLine();
-        theBook.setISBN(ISBN);
+            switch (choice){
+                case 1:
+                    Book book = new Book();
+                    System.out.println("Please enter the Title of the book \n");
+                    String title = scanner.nextLine();
+                    book.setTitle(title);
 
-        System.out.println("Please enter the genre of the \n");
-        String genre = scanner.nextLine();
-        theBook.setGenre(genre);
+                    System.out.println("Please enter the Author of the book \n");
+                    String author = scanner.nextLine();
+                    book.setAuthor(author);
 
+                    System.out.println("Please enter the ISBN of the book \n");
+                    String isbn = scanner.nextLine();
+                    book.setISBN(isbn);
 
+                    System.out.println("Please enter the Genre of the book \n");
+                    String genre = scanner.nextLine();
+                    book.setGenre(genre);
 
-        ArrayList<String> libraryBooks = new ArrayList<String>();
-        libraryBooks.add("Science");
-        libraryBooks.add("Maths");
-        libraryBooks.add("English");
-        libraryBooks.add("Comics");
-        libraryBooks.add("Religious");
+                    libraryCatalog.addBook(book);
+                    break;
 
+                case 2:
+                    System.out.println("Please enter title of book to remove \n");
+                    String bookTitle = scanner.nextLine();
+                    libraryCatalog.removeBook(bookTitle);
+                    break;
 
-        libraryCata libraryAccess = new libraryCata();
-        System.out.println(libraryBooks);
+                case 3:
+                    System.out.println("Please enter the title of the book you want to find \n");
+                    String bookName = scanner.nextLine();
+                    Book bookInfo = libraryCatalog.findBook(bookName);
 
-        System.out.println("To add a book - enter 1, to remove a book - enter 2, to find a book - enter 3, to list all books - enter 4");
-        int toDo = scanner.nextInt();
+                    System.out.println("Title: " + bookInfo.getTitle());
+                    System.out.println("Author: " + bookInfo.getAuthor());
+                    System.out.println("ISBN: " + bookInfo.getISBN());
+                    System.out.println("Genre: " + bookInfo.getGenre());
+                    System.out.println();
+                    break;
 
-        scanner.nextLine();
-        theBook.setToDo(toDo);
+                case 4:
+                    System.out.println();
+                    libraryCatalog.listBooks();
+                    break;
 
-        switch (toDo){
-            case 1:
+                case 5:
+                    System.out.println("Exiting. Thank you!");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.\n");
+                    break;
 
-                System.out.println("Please enter the Title of the book \n");
-                String addBook = scanner.nextLine();
-
-                libraryAccess.setAddBook(addBook);
-                libraryBooks.add(addBook);
-
-                System.out.println(libraryBooks);
-                break;
-
-            case 2:
-
-                System.out.println("Please enter title of book to remove \n");
-                String removeBook = scanner.nextLine();
-                libraryAccess.setRemoveBook(removeBook);
-                libraryBooks.remove(removeBook);
-
-                System.out.println(libraryBooks);
-                break;
-
-            case 3:
-
-                System.out.println("Please enter the index of the book to search \n");
-                int findBook = scanner.nextInt();
-                libraryAccess.setFindBook(findBook);
-
-                System.out.println(libraryBooks.get(findBook));
-                break;
-
-
-            case 4:
-
-                System.out.println(libraryBooks);
-                break;
-
-            case 5:
-
-                System.out.println("Invalid input");
-                break;
-
+            }
 
         }
-
 
 
 
