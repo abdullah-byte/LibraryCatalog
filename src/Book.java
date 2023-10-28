@@ -14,6 +14,10 @@ public class Book {
     }
 
     public Book(String title, String author, String ISBN, String genre) {
+        this.title = title;
+        this.genre = genre;
+        this.ISBN = ISBN;
+        this.author = author;
     }
 
     public String getTitle() {
